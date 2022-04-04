@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import { data as MENU_ITEMS } from '../fixtures/menuItems.json'
 
@@ -31,8 +31,15 @@ it('should display multiple menu items when multiple menu items are returned fro
   })
 })
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+it('should show the detail of a menu item when clicked', () => {
+  // Arrange
+  const expectedMenuItems = MENU_ITEMS
+  render(<App items={expectedMenuItems}/>)
+  const birthdayCakeMenuItem = screen.getByText('Birthday Cake')
+
+  // Act
+  fireEvent.click(birthdayCakeMenuItem)
+
+  // Assert
+  expect(screen.getByText(expectedMenuItems[2].origin)).not.toBeNull()
+})
