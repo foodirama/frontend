@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "title": "Apple",
+      "price": "$20",
+      "description": "Best apple you've ever had",
+      "origin": "From North Carolina"
+    },
+    {
+      "title": "Peach",
+      "price": "$29",
+      "description": "Sweet 'n Juicy",
+      "origin": "From Georgia"
+    },
+    {
+      "title": "Birthday Cake",
+      "price": "$1",
+      "description": "Confetti Deliousness",
+      "origin": "From Cheesecake Factory"
+    }
+  ]
+}
