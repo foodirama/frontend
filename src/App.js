@@ -6,7 +6,8 @@ function App({ items }) {
 
   return (
     <div className="App">
-      {items.map(fred => (
+      <h1>Welcome to Foodirama!</h1>
+      {items?.length && items.map(fred => (
         <div className="menu-item">
           <h1 onClick={() => setDetail(fred.origin)}>{fred.title}</h1>
           <p>{fred.price}</p>
